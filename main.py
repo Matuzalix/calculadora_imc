@@ -1,30 +1,53 @@
+import os
 
-nome = input('Digite o nome do paciente: ')
-altura = float(input('Digite a altura do paciente: '))
-peso = float(input('Digite o peso do paciente: '))
+print("-"*30)
+print("Bem vindos a nossa calculadora")
+print("-"*30)
 
-nome_str = str(nome)
-altura_float = float(altura)
-peso_float = float(peso)
+print("Escolha a operação desejada na lista abaixo:")
 
-imc = peso_float / (altura_float ** 2)
+print("0 = Soma")
+print("1 = Subtração")
+print("2 = Multiplicação")
+print("3 = Divisão")
+print("4 = Exponencial")
 
-if imc < 18.5:
-    resultado = 'Abaixo do Peso Normal'
-elif imc > 18.5 and imc < 25:
-    resultado = 'Peso Normal'
-elif imc > 25 and imc < 30:
-    resultado = 'Acima do Peso'
-elif imc > 30 and imc < 35:
-    resultado = 'Obesidade Classe I'
-elif imc > 35 and imc < 40:
-    resultado = 'Obesidade Classe II'
-else:
-    imc >= 40
-    resultado = 'Obesidade Classe III'
+operador = float(input("Digite a operação escolhida: "))
 
+while True:
+    if operador == 0:
+        n1 = float(input("digite o primeiro número: "))
+        n2 = float(input("digite o segundo número: "))
+        resultado = n1 + n2
+        print(resultado)
+    elif operador == 1:
+        n1 = float(input("digite o primeiro número: "))
+        n2 = float(input("digite o segundo número: "))
+        resultado = n1 - n2
+        print(resultado)
+    elif operador == 2:
+        n1 = float(input("digite o primeiro número: "))
+        n2 = float(input("digite o segundo número: "))
+        resultado = n1 * n2
+        print(resultado)
+    elif operador == 3:
+        n1 = float(input("digite o primeiro número: "))
+        n2 = float(input("digite o segundo número: "))
+        resultado = n1 / n2
+        print(resultado)
+    elif operador == 4:
+        n1 = float(input("digite o primeiro número: "))
+        n2 = float(input("digite o exponencial: "))
+        resultado = n1 ** n2
+        print(resultado)
 
-print(f'Nome: {nome_str} tem {altura_float} de altura')
-print(f'Pesa: {peso_float}kg, e seu IMC é:')
-print(f'{imc:.2f}')
-print(f'Avaliação Final: {resultado}')
+    os.system('cls')
+    continua = input("Deseja continuar? s/n ")
+    if continua.lower() == "s":
+            continua == True
+            print("Continuando a operação...")
+    elif continua.lower() == "n":
+            break
+    else:
+        print("Resposta inválida! Por favor, digite 's' para sair ou 'n' para continuar.")
+
